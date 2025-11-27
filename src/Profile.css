@@ -1,0 +1,304 @@
+/* --- BASE LAYOUT (FIXED) --- */
+.portfolio-container {
+  width: 100vw; /* Use viewport width directly */
+  height: 100vh;
+  background: url('portfolio-bg.png') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden; /* Prevent right-side white space */
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.portfolio-card {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 85vw; /* Scales with viewport */
+  max-width: 1200px;
+  padding: 3rem 3rem;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- UNIVERSITY & COMPANY FONT FIX --- */
+.university,
+.company-name {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #000;
+}
+
+/* --- PORTFOLIO TITLE (TOP CENTER) --- */
+.portfolio-header {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #777;
+  font-weight: 500;
+}
+
+/* --- LEFT SIDE --- */
+.left-section {
+  flex: 1;
+  border-right: 1.5px solid #d3c7b8;
+  padding-right: 2.5rem; /* Balanced divider spacing */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* --- RIGHT SIDE --- */
+.right-section {
+  flex: 1.3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 2.5rem; /* Match spacing for visual balance */
+}
+
+/* --- TITLE --- */
+.portfolio-title {
+  font-family: 'Impact', sans-serif;
+  font-size: 4rem;
+  color: #ff90c2;
+  line-height: 1;
+  letter-spacing: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* --- DESCRIPTION --- */
+.portfolio-description {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* --- DOWNLOAD BUTTON --- */
+.download-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  background: #ff90c2 !important;
+  transform: translateY(-2px);
+}
+
+.arrow {
+  margin-right: 10px;
+}
+
+/* --- TEXT BLOCK --- */
+.text-block {
+  flex: 1;
+  margin-top: -1.2rem;
+}
+
+.section-title {
+  font-family: 'Impact', sans-serif;
+  font-size: 1.5rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0.6rem;
+  color: #000;
+}
+
+.section-title.pink {
+  color: #ff90c2;
+}
+
+.bold-text {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #000;
+  margin-top: 0.4rem;
+}
+
+.regular-text {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+/* --- PROFILE IMAGE --- */
+.profile-img {
+  width: 280px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  align-self: center;
+  justify-self: center;
+}
+
+/* --- PROFILE WRAPPER (PHOTO + BUTTONS) --- */
+.profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem; /* reduced space between image and buttons */
+  margin-top: 0.2rem; /* slightly lifts the section */
+}
+
+/* --- PROFILE BUTTONS BELOW PHOTO --- */
+.profile-buttons {
+  margin-top: 0.4rem; /* reduce space below image */
+  text-align: center;
+}
+
+.profile-desc {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 0.3rem; /* reduced from 0.6rem */
+  font-weight: 500;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem; /* slightly closer between buttons */
+}
+
+.btn-group .arrow {
+  margin-right: 6px;
+}
+
+/* 🌸 Cute Fade-in Animation for Entire Card */
+.portfolio-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: softFadeUp 0.9s ease-out forwards;
+}
+
+@keyframes softFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌸 Soft Glow on Hover */
+.portfolio-card:hover {
+  box-shadow: 0 10px 28px rgba(255, 150, 210, 0.25);
+  transition: box-shadow 0.5s ease, transform 0.4s ease;
+}
+
+/* 🌸 Slight scale on headings */
+.portfolio-title,
+.section-title {
+  transition: transform 0.35s ease;
+}
+
+.portfolio-title:hover,
+.section-title:hover {
+  transform: scale(1.04);
+}
+
+/* 🌸 Cute wiggle on profile image hover */
+.profile-img {
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* 🌸 Smooth text glow on hover (subtle, classy) */
+.bold-text:hover,
+.regular-text:hover {
+  text-shadow: 0 0 8px rgba(255, 160, 210, 0.4);
+  transition: 0.3s ease;
+}
+
+/* 🌸 Button hover bounce */
+.download-btn,
+.btn-group button {
+  transition: transform 0.25s ease, background 0.35s ease, box-shadow 0.3s ease;
+}
+
+.download-btn:hover,
+.btn-group button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 18px rgba(255, 150, 210, 0.25);
+}
+
+/* 🌸 Divider soft opacity animation on load */
+.left-section {
+  animation: fadeDivider 1.5s ease forwards;
+}
+
+@keyframes fadeDivider {
+  from {
+    border-right-color: rgba(211, 199, 184, 0);
+  }
+  to {
+    border-right-color: rgba(211, 199, 184, 1);
+  }
+}
+
+
+/* --- RESPONSIVE --- */
+@media (max-width: 950px) {
+  .portfolio-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem;
+  }
+
+  .left-section {
+    border-right: none;
+    border-bottom: 1.5px solid #d3c7b8;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .right-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .portfolio-title {
+    font-size: 2.8rem;
+  }
+
+  .profile-img {
+    width: 220px;
+  }
+
+  .portfolio-header {
+    position: static;
+    transform: none;
+    margin-bottom: 1rem;
+  }
+}
+
+

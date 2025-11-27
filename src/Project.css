@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Impact&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.projects-container {
+  width: 100vw;
+  height: 100vh;
+  background: url('portfolio-bg.png') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.projects-overlay {
+  width: 90%;
+  max-width: 1200px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  padding: 2rem 3rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.projects-title {
+  font-family: 'Impact', sans-serif;
+  font-size: 4rem;
+  color: #ff9edc;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.projects-title .my {
+  font-family: 'Impact', sans-serif;
+  font-size: 4rem;
+  color: #000000;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.projects-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  background: #ff9edc;
+  border-radius: 16px;
+  width: 260px;
+  height: 280px; /* increased for consistent title visibility */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color:white;
+  margin: 0.6rem 0 0;
+  padding: 0 0.5rem;
+  text-align: center;
+}
+
+
+.projects-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.arrow-buttons {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #333;
+}
+
+.arrow-btn svg {
+  width: 26px;
+  height: 26px;
+  color: white;
+    fill: white !important;   /* FIX UTAMA */
+
+}
+
+/* MATCH SKILLS EXPERIENCE ARROW BUTTON */
+.arrow-btn {
+  width: 55px;
+  height: 55px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.35s ease, box-shadow 0.3s ease;
+  font-size: 1.4rem; /* match Skills arrow icon size */
+}
+
+.arrow-btn:hover {
+  background: #ff90c2; /* same as Skills */
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 18px rgba(255, 150, 210, 0.25);
+}
+
+
+/* 🌸 Fade-in for whole overlay */
+.projects-overlay {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cuteFadeUp 1s ease-out forwards;
+}
+
+@keyframes cuteFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌸 Soft pop animation for the title */
+.projects-title {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: titlePop 0.9s ease-out 0.15s forwards;
+}
+
+@keyframes titlePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 🌸 Cute slow sparkle glow under MY & PROJECTS */
+.projects-title span,
+.projects-title {
+  transition: text-shadow 0.4s ease;
+}
+
+.projects-title:hover {
+  text-shadow: 0 0 14px rgba(255, 150, 210, 0.4);
+}
+
+/* 🌸 Individual card fade-in & float */
+.project-card {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: cardPop 0.9s ease-out forwards;
+}
+
+/* Delay each card like cascading animation */
+.project-card:nth-child(1) { animation-delay: 0.25s; }
+.project-card:nth-child(2) { animation-delay: 0.35s; }
+.project-card:nth-child(3) { animation-delay: 0.45s; }
+
+@keyframes cardPop {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 🌸 Hover bounce + cute shadow */
+.project-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(255, 150, 210, 0.35);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* 🌸 Project image soft zoom on hover */
+.project-image {
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.08);
+}
+
+/* 🌸 CV Button hover glow */
+.download-btn {
+  transition: background 0.4s ease, transform 0.35s ease, box-shadow 0.3s ease;
+}
+
+.download-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: #ff9edc !important;
+  box-shadow: 0 8px 18px rgba(255, 150, 210, 0.3);
+}
+
+/* 🌸 Arrow buttons cute wiggle */
+.arrow-btn {
+  transition: transform 0.25s ease, background 0.35s ease, box-shadow 0.3s ease;
+}
+
+.arrow-btn:hover {
+  transform: translateY(-5px) rotate(4deg) scale(1.12);
+  background-color: #ff9edc;
+  color: black;
+  box-shadow: 0 8px 14px rgba(255, 150, 210, 0.3);
+}
+
+/* 🌸 Slight float effect on the grid when hovering */
+.projects-grid:hover {
+  transform: translateY(-2px);
+  transition: 0.4s ease;
+}
+
+
+
+

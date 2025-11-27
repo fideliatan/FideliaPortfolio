@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+}
+
+.homepage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+/* Background image lembut */
+.bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0.15; /* lebih lembut, biar teks & orangnya stand out */
+}
+
+/* Foto kiri-kanan */
+.person {
+  position: absolute;
+  bottom: 0;
+  height: 115%; /* gedein fotonya biar penuh */
+    transform: scale(1.2); /* tambah ukuran 20% */
+  transform-origin: bottom center; /* biar tetap nempel di bawah */
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.9;
+  filter: grayscale(100%);
+}
+
+.person.left {
+  left: -10%; /* sedikit keluar dari layar biar natural */
+}
+
+.person.right {
+  right: -8%;
+}
+
+/* Teks utama */
+.title {
+  position: absolute;
+  top: 25%;
+  left: 39%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  line-height: 1;
+  width: auto;
+}
+
+
+/* Fidelia's */
+.script-text {
+  display: block;
+  font-family: 'Great Vibes', cursive;
+  font-size: 8rem;
+  font-weight: 400;
+  color: #ff90c2;
+  margin-bottom: 0px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* PORTFOLIO */
+.bold-text {
+  display: block;
+  font-family: 'Great Vibes', cursive;
+  font-size: 11rem;       /* finally works */
+  font-weight: 400;       /* Great Vibes doesn't support bold */
+  color: #ff90c2;
+  line-height: 0.9;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.enter-button {
+  margin-top: 40px;
+  padding: 14px 32px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: 2px solid #000;
+  border-radius: 50px;
+  background: white;
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.enter-button:hover {
+  background: #ff90c2;
+  color: white;
+  border-color: #ff90c2;
+}
+
+/* Responsif dikit biar gak rusak di layar kecil */
+@media (max-width: 900px) {
+  .person {
+    height: 100%;
+    opacity: 0.7;
+  }
+
+  .script-text {
+    font-size: 6rem;
+  }
+
+  .bold-text {
+    font-size: 9rem;
+  }
+}

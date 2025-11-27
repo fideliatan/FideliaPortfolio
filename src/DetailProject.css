@@ -1,0 +1,139 @@
+/* MAIN CONTAINER */
+.detail-container {
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* WRAPPER */
+.detail-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.back-btn:hover {
+  background: #ff90c2;
+  transform: translateY(-3px);
+}
+
+/* TWO COLUMN LAYOUT */
+.detail-content {
+  display: flex;
+  gap: 80px;
+  margin-top: 50px;
+}
+
+/* LEFT SIDE */
+.detail-left {
+  width: 50%;
+}
+
+.detail-title {
+  font-family: "Impact", sans-serif;
+  font-size: 60px;
+  font-weight: 900;
+  color: #ff9edc;
+  line-height: 1.0;
+}
+
+.detail-description {
+  font-size: 18px;
+  color: #222;
+  line-height: 1.7;
+  margin-top: 20px;
+}
+
+/* RIGHT SIDE / SLIDER BOX */
+.detail-slider-box {
+  width: 50%;
+  background: #fff;
+  padding: 35px;
+  border-radius: 28px;
+  border: 2px solid #e3e3e3;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* ADD THIS */
+  height: 450px;          /* fixed height */
+  min-height: 450px;      /* prevent shrinking */
+  max-height: 450px;      /* prevent growing */
+  justify-content: space-between; /* keep content spaced nicely */
+}
+
+
+.detail-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;   
+  object-fit: cover;       
+  border-radius: 14px;
+  border: 1px solid #ddd;
+}
+
+
+/* SLIDER ARROWS — BIGGER & VISIBLE */
+/* MATCH SKILLS SLIDER ARROWS */
+.slider-arrow {
+  width: 55px;
+  height: 55px;
+  background: #000;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+.slider-arrow:hover {
+  background: #ff90c2;
+  transform: translateY(-3px);
+}
+
+/* Match SkillsExperience spacing */
+.slider-buttons {
+  display: flex;
+  gap: 35px;
+  margin-top: 25px;
+}
+
+.detail-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  margin-top: auto;   /* previously 60 — reduce */
+  margin-bottom: 60px; /* keep nice breathing room */
+}
+
+
+.github-btn,
+.pdf-btn {
+  padding: 14px 36px;
+  background: #000;
+  color: white;
+  border-radius: 40px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.github-btn:hover,
+.pdf-btn:hover {
+  background: #ff90c2;
+  transform: translateY(-3px);
+}
+
