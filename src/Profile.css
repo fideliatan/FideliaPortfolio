@@ -2,7 +2,7 @@
 .portfolio-container {
   width: 100vw; /* Use viewport width directly */
   height: 100vh;
-  background: url('/FideliaPortfolio/portfolio-bg.png') no-repeat center center/cover;
+  background: url('/portfolio-bg.png') no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,6 +105,14 @@
   transform: translateY(-2px);
 }
 
+.download-btn,
+.download-btn:hover,
+.download-btn:visited,
+.download-btn:active,
+a.download-btn {
+  color: #fff !important;
+}
+
 .arrow {
   margin-right: 10px;
 }
@@ -153,40 +161,47 @@
   justify-self: center;
 }
 
-/* --- PROFILE WRAPPER (PHOTO + BUTTONS) --- */
+/* --- PROFILE WRAPPER --- */
 .profile-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem; /* reduced space between image and buttons */
-  margin-top: 0.2rem; /* slightly lifts the section */
+  gap: 0.6rem;
+  margin-top: 0.2rem;
 }
 
-/* --- PROFILE BUTTONS BELOW PHOTO --- */
+/* --- PROFILE BUTTONS --- */
 .profile-buttons {
-  margin-top: 0.4rem; /* reduce space below image */
+  margin-top: 0.4rem;
   text-align: center;
 }
 
 .profile-desc {
   font-size: 0.9rem;
   color: #444;
-  margin-bottom: 0.3rem; /* reduced from 0.6rem */
+  margin-bottom: 0.3rem;
   font-weight: 500;
 }
 
 .btn-group {
   display: flex;
   justify-content: center;
-  gap: 0.7rem; /* slightly closer between buttons */
+  gap: 0.7rem;
 }
 
 .btn-group .arrow {
   margin-right: 6px;
 }
 
-/* 🌸 Cute Fade-in Animation for Entire Card */
+.btn-group button,
+.btn-group button:hover,
+.btn-group button:active,
+.btn-group button:visited {
+  color: #fff !important;
+}
+
+/* 🌸 Fade-in Animation */
 .portfolio-card {
   opacity: 0;
   transform: translateY(20px);
@@ -210,7 +225,7 @@
   transition: box-shadow 0.5s ease, transform 0.4s ease;
 }
 
-/* 🌸 Slight scale on headings */
+/* 🌸 Heading Hover */
 .portfolio-title,
 .section-title {
   transition: transform 0.35s ease;
@@ -221,7 +236,7 @@
   transform: scale(1.04);
 }
 
-/* 🌸 Cute wiggle on profile image hover */
+/* 🌸 Profile Image Hover */
 .profile-img {
   transition: transform 0.4s ease, box-shadow 0.3s ease;
 }
@@ -231,14 +246,14 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
 }
 
-/* 🌸 Smooth text glow on hover (subtle, classy) */
+/* 🌸 Text Glow Hover */
 .bold-text:hover,
 .regular-text:hover {
   text-shadow: 0 0 8px rgba(255, 160, 210, 0.4);
   transition: 0.3s ease;
 }
 
-/* 🌸 Button hover bounce */
+/* 🌸 Button Hover */
 .download-btn,
 .btn-group button {
   transition: transform 0.25s ease, background 0.35s ease, box-shadow 0.3s ease;
@@ -250,7 +265,7 @@
   box-shadow: 0 8px 18px rgba(255, 150, 210, 0.25);
 }
 
-/* 🌸 Divider soft opacity animation on load */
+/* 🌸 Divider Animation */
 .left-section {
   animation: fadeDivider 1.5s ease forwards;
 }
@@ -263,7 +278,6 @@
     border-right-color: rgba(211, 199, 184, 1);
   }
 }
-
 
 /* --- RESPONSIVE --- */
 @media (max-width: 950px) {
@@ -301,4 +315,122 @@
   }
 }
 
+/* --- TABLET PORTRAIT --- */
+@media (max-width: 750px) {
+  .portfolio-card {
+    width: 90vw;
+    padding: 2rem 1.8rem;
+  }
 
+  .portfolio-title {
+    font-size: 2.4rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .left-section {
+    padding-right: 0;
+  }
+
+  .right-section {
+    padding-left: 0;
+  }
+
+  .profile-img {
+    width: 200px;
+  }
+
+  .regular-text,
+  .bold-text,
+  .portfolio-description {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+}
+
+/* --- MOBILE --- */
+@media (max-width: 600px) {
+  .portfolio-container {
+    padding: 1.5rem 0;
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .portfolio-card {
+    padding: 1.6rem 1.4rem;
+    width: 92vw;
+  }
+
+  .portfolio-title {
+    font-size: 2rem;
+  }
+
+  .portfolio-description {
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .profile-img {
+    width: 170px;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .download-btn,
+  .btn-group button {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .left-section {
+    margin-bottom: 1.6rem;
+  }
+}
+
+/* --- SMALL MOBILE --- */
+@media (max-width: 420px) {
+  .portfolio-title {
+    font-size: 1.75rem;
+  }
+
+  .profile-img {
+    width: 150px;
+  }
+
+  .section-title {
+    font-size: 1rem;
+  }
+
+  .regular-text,
+  .bold-text,
+  .portfolio-description {
+    font-size: 0.82rem;
+  }
+
+  .portfolio-card {
+    padding: 1.2rem;
+  }
+}
+
+/* --- ULTRA SMALL DEVICES --- */
+@media (max-width: 350px) {
+  .portfolio-title {
+    font-size: 1.6rem;
+  }
+
+  .profile-img {
+    width: 135px;
+  }
+
+  .portfolio-card {
+    padding: 1rem;
+  }
+}

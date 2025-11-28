@@ -1,36 +1,53 @@
-/* MAIN CONTAINER */
+/* ----------------------------------------------------
+   🅐 MAIN CONTAINER
+---------------------------------------------------- */
 .detail-container {
   width: 100%;
   min-height: 100vh;
-  background-size: cover;
-  background-position: center;
   padding: 40px;
   position: relative;
-  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
+  font-family: "Poppins", sans-serif;
+
+  background-size: cover;
+  background-position: center;
+
+  /* Fade-in animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: softFadeUp 0.9s ease-out forwards;
 }
 
-/* WRAPPER */
+@keyframes softFadeUp {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ----------------------------------------------------
+   🅑 WRAPPER
+---------------------------------------------------- */
 .detail-wrapper {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-.back-btn:hover {
-  background: #ff90c2;
-  transform: translateY(-3px);
-}
 
-/* TWO COLUMN LAYOUT */
+/* ----------------------------------------------------
+   🅒 CONTENT LAYOUT (2 Columns)
+---------------------------------------------------- */
 .detail-content {
   display: flex;
   gap: 80px;
   margin-top: 50px;
 }
 
-/* LEFT SIDE */
+
+/* ----------------------------------------------------
+   🅓 LEFT SECTION (Title + Description)
+---------------------------------------------------- */
 .detail-left {
   width: 50%;
 }
@@ -40,47 +57,79 @@
   font-size: 60px;
   font-weight: 900;
   color: #ff9edc;
-  line-height: 1.0;
+  line-height: 1;
+  transition: transform 0.35s ease;
+}
+
+.detail-title:hover {
+  transform: scale(1.04);
 }
 
 .detail-description {
+  margin-top: 20px;
   font-size: 18px;
   color: #222;
   line-height: 1.7;
-  margin-top: 20px;
+  transition: text-shadow 0.3s ease;
 }
 
-/* RIGHT SIDE / SLIDER BOX */
+.detail-description:hover {
+  text-shadow: 0 0 8px rgba(255, 160, 210, 0.35);
+}
+
+
+/* ----------------------------------------------------
+   🅔 RIGHT SECTION (Slider Box)
+---------------------------------------------------- */
 .detail-slider-box {
   width: 50%;
   background: #fff;
   padding: 35px;
   border-radius: 28px;
   border: 2px solid #e3e3e3;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 
-  /* ADD THIS */
-  height: 450px;          /* fixed height */
-  min-height: 450px;      /* prevent shrinking */
-  max-height: 450px;      /* prevent growing */
-  justify-content: space-between; /* keep content spaced nicely */
+  height: 450px;
+  min-height: 450px;
+  max-height: 450px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  transition: box-shadow 0.5s ease, transform 0.4s ease;
 }
 
+.detail-slider-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(255, 150, 210, 0.25);
+}
 
 .detail-image {
   width: 100%;
-  aspect-ratio: 16 / 9;   
-  object-fit: cover;       
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border-radius: 14px;
   border: 1px solid #ddd;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.detail-image:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.18);
 }
 
 
-/* SLIDER ARROWS — BIGGER & VISIBLE */
-/* MATCH SKILLS SLIDER ARROWS */
+/* ----------------------------------------------------
+   🅕 SLIDER ARROWS
+---------------------------------------------------- */
+.slider-buttons {
+  display: flex;
+  gap: 35px;
+  margin-top: 25px;
+}
+
 .slider-arrow {
   width: 55px;
   height: 55px;
@@ -88,32 +137,33 @@
   border-radius: 50%;
   border: none;
   cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s ease;
+
+  transition: transform 0.25s ease,
+              background 0.35s ease,
+              box-shadow 0.3s ease;
 }
 
 .slider-arrow:hover {
   background: #ff90c2;
-  transform: translateY(-3px);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 18px rgba(255, 150, 210, 0.25);
 }
 
-/* Match SkillsExperience spacing */
-.slider-buttons {
-  display: flex;
-  gap: 35px;
-  margin-top: 25px;
-}
 
+/* ----------------------------------------------------
+   🅖 GITHUB & PDF BUTTONS
+---------------------------------------------------- */
 .detail-buttons {
   display: flex;
   justify-content: center;
   gap: 45px;
-  margin-top: auto;   /* previously 60 — reduce */
-  margin-bottom: 60px; /* keep nice breathing room */
+  margin-top: auto;
+  margin-bottom: 60px;
 }
-
 
 .github-btn,
 .pdf-btn {
@@ -124,16 +174,90 @@
   border: none;
   font-size: 16px;
   font-weight: 700;
+
   display: flex;
   align-items: center;
   gap: 10px;
+
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: transform 0.25s ease,
+              background 0.35s ease,
+              box-shadow 0.3s ease;
 }
 
 .github-btn:hover,
 .pdf-btn:hover {
   background: #ff90c2;
-  transform: translateY(-3px);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 18px rgba(255, 150, 210, 0.25);
 }
 
+.github-btn,
+.github-btn:hover,
+.github-btn:visited,
+.github-btn:active,
+.github-btn:focus,
+.pdf-btn,
+.pdf-btn:hover,
+.pdf-btn:visited,
+.pdf-btn:active,
+.pdf-btn:focus {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+
+/* ----------------------------------------------------
+   🅗 RESPONSIVE
+---------------------------------------------------- */
+@media (max-width: 1000px) {
+  .detail-content {
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 30px;
+  }
+
+  .detail-left,
+  .detail-slider-box {
+    width: 100%;
+  }
+
+  .detail-title {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .detail-description {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .detail-slider-box {
+    height: auto;
+    min-height: unset;
+  }
+
+  .detail-buttons {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .detail-title {
+    font-size: 38px;
+  }
+
+  .detail-description {
+    font-size: 15px;
+  }
+
+  .slider-arrow {
+    width: 45px;
+    height: 45px;
+  }
+
+  .detail-buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

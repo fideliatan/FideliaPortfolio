@@ -66,11 +66,20 @@ const Projects = () => {
         <div className="projects-actions">
           <a
             className="download-btn"
-            href="https://drive.google.com/file/d/1fR4tIOKx1phWsjOq90R_T6uSj--1eD3Z/view?usp=sharing"
+            href="https://drive.google.com/file/d/1yUPX08TA7ae9NWHXx2wUepg9zMups945/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaDownload /> Download CV
+          </a>
+
+          <a
+            className="download-btn"
+            href="https://github.com/fideliatan/FideliaPortfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Check this page code!
           </a>
 
           <div className="arrow-buttons">

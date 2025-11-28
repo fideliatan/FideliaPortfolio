@@ -62,23 +62,31 @@ const DetailProject = () => {
 
       {/* Buttons */}
       <div className="detail-buttons">
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="github-btn"
-        >
-          <FaGithub /> Github
-        </a>
 
-        <a
-          href={project.pdf}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="pdf-btn"
-        >
-          Report PDF
-        </a>
+        {/* GITHUB BUTTON → tampil hanya jika project.github tidak kosong */}
+        {project.github && project.github.trim() !== "" && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="github-btn"
+          >
+            <FaGithub /> Github
+          </a>
+        )}
+
+        {/* PDF BUTTON → tampil hanya jika project.pdf tidak kosong */}
+        {project.pdf && project.pdf.trim() !== "" && (
+          <a
+            href={project.pdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pdf-btn"
+          >
+            Report PDF
+          </a>
+        )}
+
       </div>
     </div>
   );

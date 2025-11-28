@@ -25,12 +25,12 @@ function Home() {
 
       <motion.img
         src={`${import.meta.env.BASE_URL}person-left.png`}
-        className="person left"
+        className="person left float"
       />
 
       <motion.img
         src={`${import.meta.env.BASE_URL}person-right.png`}
-        className="person right"
+        className="person right float"
       />
 
       <div className="title">

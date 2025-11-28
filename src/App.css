@@ -1,122 +1,175 @@
+/* ----------------------------------------------------
+   🅐 Imports
+---------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 
+/* ----------------------------------------------------
+   🅑 Global
+---------------------------------------------------- */
 body, html {
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  font-family: 'Poppins', sans-serif;
+  height: 100%;
   background-color: #f9f9f9;
+  font-family: 'Poppins', sans-serif;
 }
 
+
+/* ----------------------------------------------------
+   🅒 Homepage Layout
+---------------------------------------------------- */
 .homepage {
   position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   background-color: #f9f9f9;
+
+  /* soft fade */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: softFadeUp 0.9s ease-out forwards;
 }
 
-/* Background image lembut */
 .bg-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
   z-index: 0;
-  opacity: 0.15; /* lebih lembut, biar teks & orangnya stand out */
 }
 
-/* Foto kiri-kanan */
+
+/* ----------------------------------------------------
+   🅓 Left + Right Person Photos
+---------------------------------------------------- */
 .person {
   position: absolute;
   bottom: 0;
-  height: 115%; /* gedein fotonya biar penuh */
-    transform: scale(1.2); /* tambah ukuran 20% */
-  transform-origin: bottom center; /* biar tetap nempel di bawah */
+  height: 115%;
+  width: auto;
   object-fit: cover;
-  z-index: 1;
-  opacity: 0.9;
+  opacity: 0.85;
   filter: grayscale(100%);
+  z-index: 1;
 }
 
-.person.left {
-  left: -10%; /* sedikit keluar dari layar biar natural */
+.person.left { left: -5%; transform: scale(1.05); }
+.person.right { right: -5%; transform: scale(1.05); }
+
+.float {
+  animation: floatPerson 5s ease-in-out infinite;
 }
 
-.person.right {
-  right: -8%;
-}
 
-/* Teks utama */
+/* ----------------------------------------------------
+   🅔 Title Section (FULL CENTER)
+---------------------------------------------------- */
 .title {
   position: absolute;
-  top: 25%;
-  left: 39%;
+  top: 20%;
+  left: 40%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+
   text-align: center;
-  line-height: 1;
-  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+
+  /* pop animation */
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+  animation: titlePop 1s ease-out 0.2s forwards;
 }
 
-
-/* Fidelia's */
 .script-text {
-  display: block;
   font-family: 'Great Vibes', cursive;
-  font-size: 8rem;
+  font-size: 7rem;
   font-weight: 400;
+  margin: 0;
   color: #ff90c2;
-  margin-bottom: 0px;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+
+  transition: text-shadow 0.4s ease, transform 0.35s ease;
 }
 
-/* PORTFOLIO */
-.bold-text {
-  display: block;
-  font-family: 'Great Vibes', cursive;
-  font-size: 11rem;       /* finally works */
-  font-weight: 400;       /* Great Vibes doesn't support bold */
-  color: #ff90c2;
-  line-height: 0.9;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+.script-text:hover {
+  text-shadow: 0 0 14px rgba(255, 150, 210, 0.4);
+  transform: scale(1.04);
 }
 
+
+/* ----------------------------------------------------
+   🅕 Enter Button
+---------------------------------------------------- */
 .enter-button {
-  margin-top: 40px;
-  padding: 14px 32px;
+  margin-top: 15px;
+  padding: 14px 36px;
+
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 800;
+
   border: 2px solid #000;
-  border-radius: 50px;
+  border-radius: 40px;
   background: white;
   color: black;
   cursor: pointer;
-  transition: all 0.3s ease;
+
+  transition: transform 0.25s ease, 
+              background 0.35s ease, 
+              box-shadow 0.3s ease;
 }
 
 .enter-button:hover {
   background: #ff90c2;
   color: white;
   border-color: #ff90c2;
+  transform: translateY(-5px) scale(1.04);
+  box-shadow: 0 8px 18px rgba(255, 150, 210, 0.3);
 }
 
-/* Responsif dikit biar gak rusak di layar kecil */
+
+/* ----------------------------------------------------
+   🅖 Animations
+---------------------------------------------------- */
+@keyframes softFadeUp {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes titlePop {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatPerson {
+  0%   { transform: translateY(0) scale(1.05); }
+  50%  { transform: translateY(-8px) scale(1.07); }
+  100% { transform: translateY(0) scale(1.05); }
+}
+
+
+/* ----------------------------------------------------
+   🅗 Responsive
+---------------------------------------------------- */
 @media (max-width: 900px) {
   .person {
-    height: 100%;
-    opacity: 0.7;
+    height: 90%;
+    opacity: 0.4;
   }
 
   .script-text {
-    font-size: 6rem;
+    font-size: 4.5rem;
   }
 
-  .bold-text {
-    font-size: 9rem;
+  .enter-button {
+    padding: 12px 26px;
+    font-size: 1rem;
   }
 }
