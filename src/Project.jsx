@@ -57,7 +57,7 @@ const Projects = () => {
               className="project-card"
               onClick={() => handleProjectClick(project.title)}
             >
-              <img src={project.image} alt={project.title} className="project-image" />
+              <img src={`${import.meta.env.BASE_URL}${project.image}`} alt={project.title} className="project-image" />
               <p className="project-title">{project.title}</p>
             </div>
           ))}

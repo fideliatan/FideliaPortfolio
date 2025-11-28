@@ -2,7 +2,7 @@
 .portfolio-container {
   width: 100vw; /* Use viewport width directly */
   height: 100vh;
-  background: url('portfolio-bg.png') no-repeat center center/cover;
+  background: url('/FideliaPortfolio/portfolio-bg.png') no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;

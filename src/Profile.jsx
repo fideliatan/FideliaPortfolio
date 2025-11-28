@@ -54,7 +54,7 @@ export default function Portfolio() {
           {/* Photo + Buttons in one column */}
           <div className="profile-wrapper">
             <img
-              src="/person-profile.JPG"
+              src={`${import.meta.env.BASE_URL}person-profile.JPG`}
               alt="Person profile"
               className="profile-img"
             />

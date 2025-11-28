@@ -29,7 +29,7 @@ const DetailProject = () => {
   return (
     <div
       className="detail-container"
-      style={{ backgroundImage: `url(/portfolio-bg.png)` }}
+      style={{ backgroundImage: `url(${import.meta.env.BASE_URL}portfolio-bg.png)` }}
     >
       
     <div className="detail-wrapper">
@@ -43,7 +43,7 @@ const DetailProject = () => {
         {/* RIGHT SIDE – IMAGE SLIDER */}
         <div className="detail-slider-box">
           <img
-            src={project.images[currentIndex]}
+            src={`${import.meta.env.BASE_URL}${project.images[currentIndex]}`}
             alt="project"
             className="detail-image"
           />

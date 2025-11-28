@@ -4,9 +4,9 @@ import "./SkillsExperience.css";
 
 const SkillsExperience = () => {
   const images = [
-    "/skills1.jpg", 
-    "/skills2.jpeg",
-    "/skills3.jpg"
+    `${import.meta.env.BASE_URL}skills1.jpg`,
+    `${import.meta.env.BASE_URL}skills2.jpeg`,
+    `${import.meta.env.BASE_URL}skills3.jpg`,
   ];
 
   const [index, setIndex] = useState(0);
@@ -17,7 +17,7 @@ const SkillsExperience = () => {
   return (
     <div
       className="skills-container"
-      style={{ backgroundImage: `url(/portfolio-bg.png)` }}
+      style={{ backgroundImage: `url(${import.meta.env.BASE_URL}portfolio-bg.png)` }}
     >
       <div className="skills-wrapper">
 

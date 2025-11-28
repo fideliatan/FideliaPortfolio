@@ -23,12 +23,12 @@ function Home() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
       >
-        <img src="/portfolio-bg.png" alt="Background" className="bg-img" />
+        <img src={`${import.meta.env.BASE_URL}portfolio-bg.png`} alt="Background" className="bg-img" />
       </motion.div>
 
       {/* Left & Right Photos */}
       <motion.img
-        src="/person-left.png"
+        src={`${import.meta.env.BASE_URL}person-left.png`}
         alt="Person Left"
         className="person left"
         initial={{ x: -200, opacity: 0 }}
@@ -36,7 +36,7 @@ function Home() {
         transition={{ duration: 1 }}
       />
       <motion.img
-        src="/person-right.png"
+        src={`${import.meta.env.BASE_URL}person-right.png`}
         alt="Person Right"
         className="person right"
         initial={{ x: 200, opacity: 0 }}
