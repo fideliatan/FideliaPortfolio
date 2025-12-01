@@ -53,16 +53,7 @@ const SkillsExperience = () => {
             </button>
           </div>
         </div>
-
       </div>
-
-      {/* CV BUTTON */}
-      <div className="skills-bottom-buttons">
-        <a href="YOUR_CV_LINK_HERE" target="_blank" rel="noopener noreferrer" className="skills-cv-btn">
-         <FaDownload /> Download CV
-        </a>
-      </div>
-
     </div>
   );
 };
