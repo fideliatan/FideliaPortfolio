@@ -47,4 +47,14 @@ export const projectData = {
     github: "https://github.com/fideliatan/GlamorousSalonWebsite",
     pdf: "https://drive.google.com/file/d/1VuENvcRH9qKYKNicbeiXkTtOuxW3NdGG/view?usp=sharing",
   },
+
+    misp: {
+    id: "misp",
+    title: "MISP & Octave Allegro Risk Management System",
+    description:
+      "This project implements a web-based cybersecurity risk assessment system using the OCTAVE Allegro framework to identify, evaluate, and mitigate risks to critical organizational assets. The platform integrates MISP (Malware Information Sharing Platform) for real-time threat intelligence and uses Firebase to store assessment data securely. Built with Flask, the system guides users through a five-step workflow which are asset identification, impact analysis, asset mapping, risk identification, and risk scoring. It visualizes probability charts, total risk levels, and recent threat events to support informed security decision-making. This project enhances structured risk evaluation and provides an intuitive interface for security teams to manage cyber threats effectively.",
+    images: ["/misp.png", "/misp1.png", "/misp2.png", "/misp3.png"],
+    github: "",
+    pdf: "https://drive.google.com/file/d/1V16_5CnMbu7m0RyhjH12dDiP-oo9HaRo/view?usp=sharing",
+  }
 };

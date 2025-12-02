@@ -9,6 +9,7 @@ const titleToId = {
   "SerenAI Mental Health Chatbot": "serenai",
   "Smart Number Categorization": "smartnumber",
   "Glamorous Web Salon Manager": "glamorous",
+  "MISP & Octave Allegro Risk Management System": "misp"
   // tambahkan mapping lain di sini
 };
 
@@ -19,9 +20,10 @@ const Projects = () => {
     [
       { title: "Smart Number Categorization", image: "smartnumber.png" },
       { title: "CashE Risk Assessment", image: "cashe.png" },
-      { title: "Glamorous Web Salon Manager", image: "glamorous.png" }
+      { title: "MISP & Octave Allegro Risk Management System", image: "misp1.png" }
     ],
     [
+      { title: "Glamorous Web Salon Manager", image: "glamorous.png" },
       { title: "SerenAI Mental Health Chatbot", image: "serenai.png" },
       { title: "Pizza Management System Application", image: "pizza.png" }
     ],
