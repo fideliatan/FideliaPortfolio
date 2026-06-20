@@ -1,37 +1,57 @@
 /* ----------------------------------------------------
-   🅐 Imports
----------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Impact&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-
-/* ----------------------------------------------------
    🅑 Layout dasar
 ---------------------------------------------------- */
 .projects-container {
   width: 100vw;
   height: 100vh;
-  background: url('/FideliaPortfolio/portfolio-bg.png') no-repeat center center/cover;
+  position: relative;
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   overflow: hidden;
+  isolation: isolate;
+}
+
+.projects-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(255, 250, 246, 0.9) 0%, rgba(253, 241, 245, 0.9) 100%);
+}
+
+.projects-container::after {
+  content: '';
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--c-pink-light) 0%, transparent 70%);
+  opacity: 0.5;
+  z-index: 0;
 }
 
 .projects-overlay {
+  position: relative;
+  z-index: 1;
   width: 90%;
   max-width: 1200px;
   padding: 2rem 3rem;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.88);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
 
   /* fade-in animation */
   opacity: 0;
   transform: translateY(20px);
-  animation: cuteFadeUp 1s ease-out forwards;
+  animation: softFadeUp 1s ease-out forwards;
 }
 
 
@@ -39,24 +59,19 @@
    🅒 Title
 ---------------------------------------------------- */
 .projects-title {
-  font-family: 'Impact', sans-serif;
-  font-size: 4rem;
-  color: #ff9edc;
+  font-family: var(--font-display);
+  font-size: 3.6rem;
   letter-spacing: 2px;
+  color: var(--c-pink);
 
   /* soft pop */
   opacity: 0;
   transform: scale(0.9);
   animation: titlePop 0.9s ease-out 0.15s forwards;
-  transition: text-shadow 0.4s ease;
-}
-
-.projects-title:hover {
-  text-shadow: 0 0 14px rgba(255, 150, 210, 0.4);
 }
 
 .projects-title .my {
-  color: #000;
+  color: var(--c-ink);
 }
 
 
@@ -83,10 +98,11 @@
 .project-card {
   width: 260px;
   height: 280px;
-  background: #ff9edc;
-  border-radius: 16px;
+  background: linear-gradient(165deg, #fff5fa 0%, #ffeaf4 100%);
+  border: 1.5px solid var(--c-pink-light);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-soft);
 
   display: flex;
   flex-direction: column;
@@ -104,9 +120,10 @@
 .project-card:nth-child(3) { animation-delay: 0.45s; }
 
 .project-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 12px 24px rgba(255, 150, 210, 0.35);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transform: translateY(-8px);
+  border-color: var(--c-pink);
+  box-shadow: var(--shadow-pink);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .project-image {
@@ -117,7 +134,7 @@
 }
 
 .project-card:hover .project-image {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .project-title {
@@ -125,7 +142,7 @@
   padding: 0 0.5rem;
   font-size: 1rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--c-ink);
   text-align: center;
 }
 
@@ -146,9 +163,9 @@
   gap: 0.5rem;
 
   padding: 0.6rem 1.2rem;
-  background: #000;
+  background: var(--c-ink);
   color: white;
-  border-radius: 30px;
+  border-radius: var(--radius-pill);
   border: none;
   font-weight: 600;
   cursor: pointer;
@@ -157,9 +174,9 @@
 }
 
 .download-btn:hover {
-  background: #ff9edc !important;
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 8px 18px rgba(255, 150, 210, 0.3);
+  background: var(--c-pink) !important;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-pink);
 }
 
 
@@ -176,7 +193,7 @@
 .arrow-btn {
   width: 55px;
   height: 55px;
-  background: #000;
+  background: var(--c-ink);
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -189,34 +206,20 @@
 }
 
 .arrow-btn:hover {
-  background: #ff90c2;
-  transform: translateY(-3px) rotate(4deg) scale(1.12);
-  box-shadow: 0 8px 18px rgba(255, 150, 210, 0.25);
+  background: var(--c-pink);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-pink);
+}
+
+.arrow-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .arrow-btn svg {
   width: 28px;
   height: 28px;
   color: white;
-}
-
-
-/* ----------------------------------------------------
-   🅗 Animations
----------------------------------------------------- */
-@keyframes cuteFadeUp {
-  0% { opacity: 0; transform: translateY(25px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes titlePop {
-  0% { opacity: 0; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes cardPop {
-  0% { opacity: 0; transform: translateY(20px) scale(0.95); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 

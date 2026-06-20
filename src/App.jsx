@@ -34,11 +34,12 @@ function Home() {
       />
 
       <div className="title">
+        <span className="eyebrow">Welcome to</span>
         <span className="script-text">
           Fidelia’s <br /> Portfolio
         </span>
         <button className="enter-button" onClick={handleEnter}>
-          ENTER HERE
+          Enter
         </button>
       </div>
     </div>

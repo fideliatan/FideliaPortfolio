@@ -46,7 +46,14 @@ const Projects = () => {
   };
 
   return (
-    <div className="projects-container">
+    <div
+      className="projects-container"
+      style={{ backgroundImage: `url(${import.meta.env.BASE_URL}portfolio-bg.png)` }}
+    >
+      <button className="back-btn" onClick={() => navigate('/profile')}>
+        <FaArrowLeft /> Back
+      </button>
+
       <div className="projects-overlay">
         <h1 className="projects-title">
           <span className="my">MY</span> PROJECTS
@@ -68,9 +75,8 @@ const Projects = () => {
         <div className="projects-actions">
           <a
             className="download-btn"
-            href="https://drive.google.com/file/d/1yUPX08TA7ae9NWHXx2wUepg9zMups945/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`${import.meta.env.BASE_URL}CV_FideliaBelleTanner.pdf`}
+            download="CV_FideliaBelleTanner.pdf"
           >
             <FaDownload /> Download CV
           </a>

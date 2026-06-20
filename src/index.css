@@ -1,11 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700;900&family=Great+Vibes&display=swap');
+
+/* ----------------------------------------------------
+   DESIGN TOKENS — shared across the whole portfolio
+---------------------------------------------------- */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* palette */
+  --c-pink: #ff6fb0;
+  --c-pink-light: #ffd1ea;
+  --c-purple: #9b7bff;
+  --c-ink: #2b2438;
+  --c-paper: #fffaf6;
+
+  /* shadows */
+  --shadow-pink: 0 8px 22px rgba(255, 111, 176, 0.32);
+  --shadow-soft: 0 6px 20px rgba(43, 36, 56, 0.1);
+
+  /* shape & motion */
+  --radius-pill: 40px;
+  --radius-lg: 28px;
+  --radius-md: 16px;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* type */
+  --font-body: 'Poppins', sans-serif;
+  --font-display: 'Anton', sans-serif;
+  --font-script: 'Great Vibes', cursive;
+
+  color: var(--c-ink);
+  background-color: var(--c-paper);
+  font-family: var(--font-body);
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,13 +38,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  box-sizing: border-box;
 }
 
 html, body {
@@ -27,42 +47,100 @@ html, body {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+  background-color: var(--c-paper);
 }
 
+a {
+  font-weight: 500;
+  color: var(--c-pink);
+  text-decoration: inherit;
+  transition: color 0.25s var(--ease);
+}
+a:hover {
+  color: var(--c-purple);
+}
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin: 0;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  border: none;
   padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 600;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background: var(--c-ink);
+  color: #fff;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: transform 0.25s var(--ease), box-shadow 0.3s var(--ease);
 }
 button:hover {
-  border-color: #646cff;
+  box-shadow: var(--shadow-pink);
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--c-purple);
+  outline-offset: 2px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* ----------------------------------------------------
+   Shared back button — used on every page except Home
+---------------------------------------------------- */
+.back-btn {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1.5px solid var(--c-pink-light);
+  border-radius: var(--radius-pill);
+  color: var(--c-ink);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s var(--ease), box-shadow 0.3s var(--ease), background 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.back-btn:hover {
+  background: var(--c-pink);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-pink);
+}
+
+@media (max-width: 600px) {
+  .back-btn {
+    top: 14px;
+    left: 14px;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.8rem;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+/* ----------------------------------------------------
+   Shared keyframes
+---------------------------------------------------- */
+@keyframes softFadeUp {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes titlePop {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes cardPop {
+  0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }

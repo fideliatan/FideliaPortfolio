@@ -8,10 +8,11 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-body);
 
   background-size: cover;
   background-position: center;
+  isolation: isolate;
 
   /* Fade-in animation */
   opacity: 0;
@@ -19,9 +20,26 @@
   animation: softFadeUp 0.9s ease-out forwards;
 }
 
-@keyframes softFadeUp {
-  0% { opacity: 0; transform: translateY(25px); }
-  100% { opacity: 1; transform: translateY(0); }
+.detail-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(255, 250, 246, 0.9) 0%, rgba(253, 241, 245, 0.9) 100%);
+}
+
+.detail-container::after {
+  content: '';
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--c-pink-light) 0%, transparent 70%);
+  opacity: 0.5;
+  z-index: -1;
 }
 
 
@@ -32,6 +50,8 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -40,6 +60,7 @@
 ---------------------------------------------------- */
 .detail-content {
   display: flex;
+  align-items: flex-start;
   gap: 80px;
   margin-top: 50px;
 }
@@ -53,11 +74,11 @@
 }
 
 .detail-title {
-  font-family: "Impact", sans-serif;
-  font-size: 60px;
-  font-weight: 900;
-  color: #ff9edc;
-  line-height: 1;
+  font-family: var(--font-display);
+  font-size: 56px;
+  letter-spacing: 0.5px;
+  color: var(--c-pink);
+  line-height: 1.1;
   transition: transform 0.35s ease;
 }
 
@@ -83,34 +104,30 @@
 ---------------------------------------------------- */
 .detail-slider-box {
   width: 50%;
-  background: #fff;
+  background: linear-gradient(165deg, #fff5fa 0%, #ffeaf4 100%);
   padding: 35px;
-  border-radius: 28px;
-  border: 2px solid #e3e3e3;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--c-pink-light);
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  gap: 25px;
 
-  height: 450px;
-  min-height: 450px;
-  max-height: 450px;
-
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  box-shadow: var(--shadow-soft);
   transition: box-shadow 0.5s ease, transform 0.4s ease;
 }
 
 .detail-slider-box:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 28px rgba(255, 150, 210, 0.25);
+  box-shadow: var(--shadow-pink);
 }
 
 .detail-image {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 14px;
+  border-radius: var(--radius-md);
   border: 1px solid #ddd;
   transition: transform 0.4s ease, box-shadow 0.3s ease;
 }
@@ -127,13 +144,12 @@
 .slider-buttons {
   display: flex;
   gap: 35px;
-  margin-top: 25px;
 }
 
 .slider-arrow {
   width: 55px;
   height: 55px;
-  background: #000;
+  background: var(--c-ink);
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -148,9 +164,9 @@
 }
 
 .slider-arrow:hover {
-  background: #ff90c2;
+  background: var(--c-pink);
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 18px rgba(255, 150, 210, 0.25);
+  box-shadow: var(--shadow-pink);
 }
 
 
@@ -161,16 +177,16 @@
   display: flex;
   justify-content: center;
   gap: 45px;
-  margin-top: auto;
-  margin-bottom: 60px;
+  margin-top: 60px;
+  margin-bottom: 50px;
 }
 
 .github-btn,
 .pdf-btn {
   padding: 14px 36px;
-  background: #000;
+  background: var(--c-ink);
   color: white;
-  border-radius: 40px;
+  border-radius: var(--radius-pill);
   border: none;
   font-size: 16px;
   font-weight: 700;
@@ -187,9 +203,9 @@
 
 .github-btn:hover,
 .pdf-btn:hover {
-  background: #ff90c2;
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 18px rgba(255, 150, 210, 0.25);
+  background: var(--c-pink);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-pink);
 }
 
 .github-btn,
@@ -223,7 +239,7 @@
   }
 
   .detail-title {
-    font-size: 48px;
+    font-size: 44px;
     text-align: center;
   }
 
@@ -232,19 +248,15 @@
     text-align: center;
   }
 
-  .detail-slider-box {
-    height: auto;
-    min-height: unset;
-  }
-
   .detail-buttons {
+    margin-top: 40px;
     margin-bottom: 30px;
   }
 }
 
 @media (max-width: 600px) {
   .detail-title {
-    font-size: 38px;
+    font-size: 34px;
   }
 
   .detail-description {

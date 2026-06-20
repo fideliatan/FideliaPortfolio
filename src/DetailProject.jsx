@@ -31,7 +31,10 @@ const DetailProject = () => {
       className="detail-container"
       style={{ backgroundImage: `url(${import.meta.env.BASE_URL}portfolio-bg.png)` }}
     >
-      
+      <button className="back-btn" onClick={() => navigate('/project')}>
+        <FaArrowLeft /> Back
+      </button>
+
     <div className="detail-wrapper">
       <div className="detail-content">
         {/* LEFT SIDE */}
