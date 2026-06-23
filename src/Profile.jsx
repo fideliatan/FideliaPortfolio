@@ -58,7 +58,7 @@ export default function Portfolio() {
 
             <p className="company-name">PT Telekomunikasi Indonesia Tbk</p>
             <p className="regular-text">
-              Developer Internship at Enterprise & Business Services Directorate <br /> August 2025 - January 2026
+              <b>Developer Internship</b> <br /> Enterprise & Business Services Directorate <br /> August 2025 - January 2026
             </p>
           </div>
 
