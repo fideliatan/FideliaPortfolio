@@ -44,21 +44,24 @@ export default function Portfolio() {
             <h2 className="section-title pink">EDUCATION</h2>
             <p className="university">President University</p>
             <p className="regular-text">
-              Information Technology <br /> August 2023 - December 2026 (Expected) <br /> GPA: 3.92/4.00
+              Information Technology <br /> August 2023 - December 2026 (Expected) <br /> GPA: 3.94/4.00
             </p>
 
             <h2 className="section-title purple">EXPERIENCE</h2>
+            
+            <p className="company-name">PT Asuransi Jiwa Sequis Life</p>
+            <p className="regular-text">
+              <b>Operation Excellence Intern</b> <br />Operations Department<br /> September 2026 - Present
+            </p>
+
             <p className="company-name">PT Panin Dai-ichi Life</p>
             <p className="regular-text">
-              <b>IT Application Support</b> <br /> Information Technology Department <br /> May 2026 - Present
-            </p>
-            <p className="regular-text">
-              <b>IT Service Desk Internship</b> <br /> Information Technology Department <br /> February - May 2026
+              <b>IT Application Support Intern</b> <br /> Information Technology Department <br /> May 2026 - July 2026
             </p>
 
             <p className="company-name">PT Telekomunikasi Indonesia Tbk</p>
             <p className="regular-text">
-              <b>Developer Internship</b> <br /> Enterprise & Business Services Directorate <br /> August 2025 - January 2026
+              <b>Developer Intern</b> <br /> Enterprise & Business Services Directorate <br /> August 2025 - January 2026
             </p>
           </div>
 

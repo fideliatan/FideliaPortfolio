@@ -56,5 +56,15 @@ export const projectData = {
     images: ["/misp.png", "/misp1.png", "/misp2.png", "/misp3.png"],
     github: "",
     pdf: "https://drive.google.com/file/d/1V16_5CnMbu7m0RyhjH12dDiP-oo9HaRo/view?usp=sharing",
+  },
+
+    careofyou: {
+    id: "careofyou",
+    title: "Careofyou E-Commerce Management Platform",
+    description:
+      "CareOfYou is a full-stack e-commerce platform for a skincare and beauty brand. It has two connected experiences: a customer storefront for browsing products, managing a cart, saving favorites, checking out, and tracking orders and returns; and an admin panel for managing products, processing orders and returns, and viewing a sales dashboard. I built the frontend with React 19 and Next.js 16 (App Router), using reusable components, shared layouts, React hooks, and Context API for global cart state. It connects to a Django REST backend through a clean API layer, with features like OTP-verified login, role-based access, and QR-code scanning for order/return handling.",
+    images: ["/careofyou1.png", "/careofyou2.png", "/careofyou3.png"],
+    github: "https://github.com/nelcyy/CareofyouCapstoneProject",
+    pdf: "",
   }
 };

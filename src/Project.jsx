@@ -9,7 +9,8 @@ const titleToId = {
   "SerenAI Mental Health Chatbot": "serenai",
   "Smart Number Categorization": "smartnumber",
   "Glamorous Web Salon Manager": "glamorous",
-  "MISP & Octave Allegro Risk Management System": "misp"
+  "MISP & Octave Allegro Risk Management System": "misp",
+  "Careofyou Ecommerce Website": "careofyou"
   // tambahkan mapping lain di sini
 };
 
@@ -27,6 +28,9 @@ const Projects = () => {
       { title: "SerenAI Mental Health Chatbot", image: "serenai.png" },
       { title: "Pizza Management System Application", image: "pizza.png" }
     ],
+    [
+      { title: "Careofyou Ecommerce Website", image: "careofyou1.png" }
+    ]
   ];
 
   const [page, setPage] = useState(0);
